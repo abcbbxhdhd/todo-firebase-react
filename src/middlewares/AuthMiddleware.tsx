@@ -9,10 +9,12 @@ const AuthMiddleware: React.FC<AuthMiddlewareProps> = ({ children }) => {
     const currentUser = sessionStorage.getItem("currentUser")
 
     return (
-        <>
-            currentUser === null 
-                ? <Navigate to="/login" />
-                : {children}
+        <>  
+            {
+                !currentUser 
+                    ? <Navigate to="/login" />
+                    : {children}
+            }   
         </>
     )
 }
