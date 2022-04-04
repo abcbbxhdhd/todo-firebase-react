@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
+import AuthMiddleware from './middlewares/AuthMiddleware';
+import { Navigate, Routes, Route } from 'react-router-dom';
+import LoginView from './views/LoginView/LoginView';
+import RegisterView from './views/RegisterView/RegisterView';
+import TodoListView from './views/TodoListView/TodoListView';
 
 function App() {
-  const currentUser = 
   return (
-    <h1>App</h1>
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/login" element={<LoginView />} />
+      <Route path="/signup" element={<RegisterView />} />
+      <Route path="/todos" element={<AuthMiddleware><TodoListView /></AuthMiddleware>} />
+    </Routes>
   );
 }
 
