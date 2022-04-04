@@ -1,11 +1,11 @@
-import React, { ReactChildren } from "react"
+import React, { ReactChildren, ReactNode } from "react"
 import { Navigate } from "react-router-dom"
 
 interface AuthMiddlewareProps {
-    children: ReactChildren
+    children: ReactNode
 }
 
-const AuthMiddleware: React.FC<AuthMiddlewareProps> = ({children}) => {
+const AuthMiddleware: React.FC<AuthMiddlewareProps> = ({ children }) => {
     const currentUser = sessionStorage.getItem("currentUser")
 
     return (
@@ -16,3 +16,5 @@ const AuthMiddleware: React.FC<AuthMiddlewareProps> = ({children}) => {
         </>
     )
 }
+
+export default AuthMiddleware
