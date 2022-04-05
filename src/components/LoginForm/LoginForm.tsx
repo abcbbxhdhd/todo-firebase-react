@@ -55,6 +55,7 @@ const LoginForm: React.FC = () => {
 
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
+            <h3>Sign In</h3>
             <input name="email" placeholder="Email" type="email" value={formData.email} onChange={(e) => handleChange(e)} />
             <input name="password" type="password" placeholder="Password" value={formData.password} onChange={(e) => handleChange(e)} />
             <button type="submit">Sign In</button>
