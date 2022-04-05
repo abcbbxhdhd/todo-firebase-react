@@ -8,7 +8,7 @@ import TodoListView from './views/TodoListView/TodoListView';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/" element={<Navigate to="/todos" />} />
       <Route path="/login" element={<LoginView />} />
       <Route path="/signup" element={<RegisterView />} />
       <Route path="/todos" element={<AuthMiddleware><TodoListView /></AuthMiddleware>} />
