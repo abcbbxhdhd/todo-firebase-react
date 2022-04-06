@@ -13,7 +13,7 @@ const AuthMiddleware: React.FC<AuthMiddlewareProps> = ({ children }) => {
             {
                 !currentUser 
                     ? <Navigate to="/login" />
-                    : {children}
+                    : children
             }   
         </>
     )
